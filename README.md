@@ -24,6 +24,9 @@ dr-code-portfolio/
 │   │   └── style.css
 │   ├── js/
 │   │   └── main.js
+│   ├── fonts/
+│   │   ├── montserrat-latin.woff2   # fonte Montserrat (hospedada no projeto)
+│   │   └── OFL.txt                  # licença da fonte
 │   └── images/
 │       └── icones/       # ícones SVG das tecnologias
 └── docs/
@@ -35,14 +38,15 @@ dr-code-portfolio/
 
 O layout segue o mockup aprovado em `docs/referencias/mockup-aprovado.png`: fundo escuro, roxo como cor de destaque, bordas discretas e cantos arredondados.
 
-- **Tipografia:** Montserrat (Google Fonts).
+- **Tipografia:** Montserrat, hospedada no próprio projeto (`assets/fonts/`). É o arquivo variável oficial do Google Fonts (subconjunto latin, v31), que cobre todos os pesos usados (400 a 800), distribuído sob a SIL Open Font License 1.1 (`assets/fonts/OFL.txt`). O site não carrega nenhum recurso externo.
 - **Logo:** textual, com `D//R` em roxo e `CODE.` logo abaixo.
 - **Cabeçalho:** fixo no topo, com menu hambúrguer no celular e menu em linha a partir de 960px.
 - **Seção inicial:** apresentação, botões e contatos; ao lado (ou abaixo, no celular), um notebook com código C# feito apenas com HTML e CSS, sem imagens.
 - **Tecnologias:** oito cards (C#, .NET, HTML, CSS, JavaScript, Git, GitHub e SQL Server) com ícones SVG locais em `assets/images/icones/`. São 2 colunas no celular, 4 a partir de 768px e 8 a partir de 1200px. Os cards mostram apenas as tecnologias que estou aprendendo, sem níveis de experiência.
 - **Projetos:** três cards reservados (Projeto 01, 02 e 03, "Em breve"), em 1 coluna no celular, 2 a partir de 768px e 3 a partir de 1024px. Eles serão substituídos por projetos reais quando estiverem prontos.
 - **Sobre mim:** painel com avatar genérico (ícone, sem foto), texto de apresentação e selos com as áreas de interesse. No celular o avatar fica acima do texto; a partir de 768px, ao lado.
-- **Contato:** breve convite e três cards com ícone, nome e endereço: GitHub, LinkedIn e E-mail. O card de e-mail tem dois botões, **Enviar e-mail** e **Copiar e-mail**, lado a lado quando há espaço e empilhados quando não há. São 1 coluna até 1023px e 3 colunas a partir de 1024px. Não há formulário de contato.
+- **Contato:** breve convite e três cards com ícone, nome e endereço: GitHub, LinkedIn e E-mail. O card de e-mail tem dois botões, **Enviar e-mail** e **Copiar e-mail**, lado a lado quando há espaço e empilhados quando não há. Até 1023px os cards ficam em 1 coluna; a partir de 1024px, GitHub e LinkedIn ficam lado a lado e o card de e-mail ocupa a largura toda, embaixo. Não há formulário de contato.
+- **Rodapé:** texto centralizado em cinza discreto (`--cor-texto-discreto`, contraste 6,99:1), com a mesma largura máxima e margens do conteúdo.
 - **Contatos no Hero:** GitHub, LinkedIn e E-mail. No celular estreito, os contatos podem quebrar para uma segunda linha.
 
 ### Contatos oficiais
@@ -71,7 +75,48 @@ A cópia pela API exige uma página segura (`https://` ou `localhost`), como no 
 - Ícones decorativos ocultos para leitores de tela (`aria-hidden="true"`); nos links que abrem nova aba, o texto "(abre em nova aba)" fica disponível só para leitores de tela.
 - O resultado do botão Copiar e-mail é anunciado aos leitores de tela (`aria-live="polite"`).
 - Endereços longos quebram em pontos definidos (`<wbr>`), sem rolagem horizontal em 320px.
+- Atalho "Pular para o conteúdo": é o primeiro item ao apertar Tab e leva direto ao conteúdo, sem passar pelo menu.
+- Respeita a preferência por menos movimento (`prefers-reduced-motion`): sem rolagem suave e sem transições.
 - Testado em 320, 375, 768, 1024 e 1440px.
+
+## Revisão técnica (Etapa 8)
+
+Revisão de SEO, acessibilidade, desempenho e qualidade do código, preservando o visual aprovado. A única mudança visível é o acabamento do rodapé; o restante da página ficou idêntico, pixel a pixel, à versão anterior nas cinco larguras testadas.
+
+**Melhorias realizadas**
+
+- **SEO e compartilhamento:** novo título e descrição; metadados de autor e cor do tema; Open Graph (`og:type`, `og:locale`, `og:site_name`, `og:title`, `og:description`) e cartão do Twitter/X (`summary`).
+- **Fonte local:** a Montserrat passou a ser carregada do próprio projeto, com pré-carregamento (`preload`), no lugar do Google Fonts. A página deixou de depender de serviços externos e de enviar o IP do visitante ao Google, e o texto aparece mais cedo.
+- **Fonte de reserva:** enquanto a Montserrat carrega, o texto aparece em Arial ajustada para ter o mesmo tamanho, evitando que o layout "pule" quando a fonte chega.
+- **Menu no carregamento:** a marcação de que o JavaScript está ativo (classe `js`) é feita no `<head>`, antes da primeira pintura. Sem isso, no celular o menu aparecia aberto por um instante e depois sumia, deslocando a página.
+- **Título principal (`h1`):** tamanho de fonte declarado, para não ser afetado por uma mudança anunciada no Chrome.
+- **Acessibilidade:** atalho "Pular para o conteúdo"; aviso "(abre em nova aba)" para leitores de tela também nos links do Hero; a lista de áreas de interesse em Sobre mim ganhou um título só para leitores de tela (no lugar de `aria-label`, que os leitores de tela não anunciam de forma consistente em listas).
+- **Rodapé:** acabamento mínimo (centralizado, cinza discreto, mesmas margens do conteúdo).
+- **Limpeza:** removido um comentário obsoleto do CSS.
+
+**Resultado no Lighthouse (servidor local)**
+
+| | Desempenho | Acessibilidade | Boas práticas | SEO | CLS |
+| --- | --- | --- | --- | --- | --- |
+| Antes da Etapa 8, celular | 87–93 | 100 | 82 | 100 | até 0,147 |
+| Depois, celular (3 rodadas) | 100 | 100 | 100 | 100 | 0 |
+| Depois, desktop (2 rodadas) | 100 | 100 | 100 | 100 | 0 |
+
+**Testes executados**
+
+- Lighthouse 12.6.1 (celular e desktop), em várias rodadas, antes e depois.
+- Validação do HTML com `html-validate` (regras recomendadas): nenhum problema.
+- Carregamento com todos os serviços externos bloqueados: a página fica idêntica.
+- `node --check assets/js/main.js` e `git diff --check`.
+- Comparação pixel a pixel e de posição dos blocos em 320, 375, 768, 1024 e 1440px.
+- Navegação por teclado, menu mobile, atalho, movimento reduzido, links, botão Copiar e-mail e erros de console.
+- Os links `mailto:` foram conferidos pelos atributos, sem clique, para não abrir o seletor de aplicativos do Windows.
+
+**Pendências que dependem da publicação (Etapa 9)**
+
+- `og:url`, `og:image` e URL canônica, que precisam do endereço público do site.
+- `robots.txt` e `sitemap.xml`, que também usam o endereço público.
+- Compressão e cache dos arquivos, que são configurados pelo servidor de hospedagem.
 
 As cores ficam em variáveis CSS no início do `assets/css/style.css`, para facilitar mudanças na paleta:
 
@@ -113,9 +158,10 @@ Os commits seguem o padrão [Conventional Commits](https://www.conventionalcommi
 - [x] Etapa 3: Identidade visual e cabeçalho
 - [x] Etapa 4: Seção inicial com apresentação e ilustração
 - [x] Etapa 5: Tecnologias e projetos
-- [ ] Etapa 6: Sobre mim e contato (implementada, aguardando aprovação visual)
-- [ ] Etapa 7: Responsividade e animações
-- [ ] Etapa 8: Testes, revisão e publicação
+- [x] Etapa 6: Sobre mim e contato
+- [ ] Etapa 7: Inclusão dos projetos reais (adiada até os projetos ficarem prontos)
+- [ ] Etapa 8: Revisão geral, SEO, desempenho e acessibilidade (em revisão)
+- [ ] Etapa 9: Publicação
 
 ## Autor
 
