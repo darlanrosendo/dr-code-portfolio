@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfólio de Darlan Rosendo, desenvolvedor em formação.">
     <title>D/R Code | Darlan Rosendo</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
@@ -130,72 +131,91 @@
         </section>
 
         <!-- ========== TECNOLOGIAS ========== -->
-        <section id="tecnologias" class="tecnologias">
-            <h2>Tecnologias</h2>
+        <section id="tecnologias" class="secao tecnologias" aria-labelledby="tecnologias-titulo">
+            <h2 id="tecnologias-titulo" class="secao-titulo">Tecnologias que estou aprendendo</h2>
 
+            <!-- Os ícones ficam em assets/images/icones/. O nome ao lado já identifica
+                 cada tecnologia, por isso as imagens têm alt vazio. -->
             <ul class="tecnologias-lista">
-                <li class="tecnologia-card">C#</li>
-                <li class="tecnologia-card">.NET</li>
-                <li class="tecnologia-card">HTML</li>
-                <li class="tecnologia-card">CSS</li>
-                <li class="tecnologia-card">JavaScript</li>
-                <li class="tecnologia-card">Git</li>
-                <li class="tecnologia-card">GitHub</li>
-                <li class="tecnologia-card">SQL Server</li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/csharp.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">C#</span>
+                </li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/dotnet.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">.NET</span>
+                </li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/html.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">HTML</span>
+                </li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/css.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">CSS</span>
+                </li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/javascript.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">JavaScript</span>
+                </li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/git.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">Git</span>
+                </li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/github.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">GitHub</span>
+                </li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/sql-server.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">SQL Server</span>
+                </li>
             </ul>
         </section>
 
         <!-- ========== PROJETOS ========== -->
-        <section id="projetos" class="projetos">
-            <h2>Projetos</h2>
+        <section id="projetos" class="secao projetos" aria-labelledby="projetos-titulo">
+            <h2 id="projetos-titulo" class="secao-titulo">Projetos</h2>
 
             <!--
-                Os cards abaixo são espaços reservados (placeholders).
-                Para adicionar um projeto real, substitua em um card:
+                Os cards abaixo são espaços reservados.
+                Para publicar um projeto real, substitua em um card:
                 imagem, nome, descrição, tecnologias e links.
             -->
-            <div class="projetos-lista">
-
-                <article class="projeto-card">
-                    <div class="projeto-imagem">[Imagem do projeto]</div>
-                    <h3 class="projeto-nome">[Nome do projeto]</h3>
-                    <p class="projeto-descricao">[Espaço reservado: breve descrição do projeto.]</p>
-                    <ul class="projeto-tecnologias" aria-label="Tecnologias utilizadas">
-                        <li>[Tecnologia]</li>
-                    </ul>
-                    <ul class="projeto-links">
-                        <li>[Link do GitHub: a definir]</li>
-                        <li>[Link para visualizar: a definir]</li>
-                    </ul>
-                </article>
-
-                <article class="projeto-card">
-                    <div class="projeto-imagem">[Imagem do projeto]</div>
-                    <h3 class="projeto-nome">[Nome do projeto]</h3>
-                    <p class="projeto-descricao">[Espaço reservado: breve descrição do projeto.]</p>
-                    <ul class="projeto-tecnologias" aria-label="Tecnologias utilizadas">
-                        <li>[Tecnologia]</li>
-                    </ul>
-                    <ul class="projeto-links">
-                        <li>[Link do GitHub: a definir]</li>
-                        <li>[Link para visualizar: a definir]</li>
-                    </ul>
-                </article>
-
-                <article class="projeto-card">
-                    <div class="projeto-imagem">[Imagem do projeto]</div>
-                    <h3 class="projeto-nome">[Nome do projeto]</h3>
-                    <p class="projeto-descricao">[Espaço reservado: breve descrição do projeto.]</p>
-                    <ul class="projeto-tecnologias" aria-label="Tecnologias utilizadas">
-                        <li>[Tecnologia]</li>
-                    </ul>
-                    <ul class="projeto-links">
-                        <li>[Link do GitHub: a definir]</li>
-                        <li>[Link para visualizar: a definir]</li>
-                    </ul>
-                </article>
-
-            </div>
+            <ul class="projetos-lista">
+                <li>
+                    <article class="projeto-card">
+                        <div class="projeto-imagem" aria-hidden="true">
+                            <span class="projeto-imagem-marca">&lt;/&gt;</span>
+                        </div>
+                        <div class="projeto-info">
+                            <h3 class="projeto-nome">Projeto 01</h3>
+                            <p class="projeto-status">Em breve</p>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="projeto-card">
+                        <div class="projeto-imagem" aria-hidden="true">
+                            <span class="projeto-imagem-marca">&lt;/&gt;</span>
+                        </div>
+                        <div class="projeto-info">
+                            <h3 class="projeto-nome">Projeto 02</h3>
+                            <p class="projeto-status">Em breve</p>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="projeto-card">
+                        <div class="projeto-imagem" aria-hidden="true">
+                            <span class="projeto-imagem-marca">&lt;/&gt;</span>
+                        </div>
+                        <div class="projeto-info">
+                            <h3 class="projeto-nome">Projeto 03</h3>
+                            <p class="projeto-status">Em breve</p>
+                        </div>
+                    </article>
+                </li>
+            </ul>
         </section>
 
         <!-- ========== SOBRE MIM ========== -->
