@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>D/R Code</title>
+  <rect width="64" height="64" rx="14" fill="#0A0A1F"/>
+  <g fill="none" stroke="#8B5CF6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 19v26h3.5c6.5 0 10.5-5.2 10.5-13S19 19 12.5 19z"/>
+    <path d="M28.5 45 33.5 19M35.5 45 40.5 19"/>
+    <path d="M45.5 45V19h5c4 0 6.5 2.6 6.5 6.5S54.5 32 50.5 32h-5M51 32l6 13"/>
+  </g>
+</svg>
