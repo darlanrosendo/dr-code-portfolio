@@ -62,3 +62,77 @@ telaDesktop.addEventListener('change', function (evento) {
         fecharMenu();
     }
 });
+
+// ========== COPIAR E-MAIL ==========
+// Botões com o atributo data-copiar copiam o texto indicado nele.
+// A mensagem de resultado aparece no elemento indicado em data-feedback,
+// que tem aria-live="polite" para ser anunciada pelos leitores de tela.
+
+// Alternativa para navegadores sem a API de área de transferência
+// (ou quando ela é bloqueada): copia a partir de um campo temporário.
+function copiarComCampoTemporario(texto) {
+    const campo = document.createElement('textarea');
+    campo.value = texto;
+    campo.setAttribute('readonly', '');
+    campo.style.position = 'fixed';
+    campo.style.top = '0';
+    campo.style.left = '0';
+    campo.style.opacity = '0';
+    document.body.appendChild(campo);
+    campo.select();
+    campo.setSelectionRange(0, texto.length);
+
+    let copiou = false;
+    try {
+        copiou = document.execCommand('copy');
+    } catch (erro) {
+        copiou = false;
+    }
+
+    document.body.removeChild(campo);
+    return copiou;
+}
+
+// Retorna true somente se a cópia realmente aconteceu
+async function copiarTexto(texto) {
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+        try {
+            await navigator.clipboard.writeText(texto);
+            return true;
+        } catch (erro) {
+            // Permissão negada ou API indisponível: tenta a alternativa abaixo
+        }
+    }
+    return copiarComCampoTemporario(texto);
+}
+
+document.querySelectorAll('[data-copiar]').forEach(function (botao) {
+    const feedback = document.getElementById(botao.dataset.feedback);
+    let temporizador;
+
+    function mostrarMensagem(texto, erro) {
+        clearTimeout(temporizador);
+        feedback.classList.toggle('contato-feedback-erro', erro);
+        feedback.textContent = texto;
+        // A mensagem de sucesso some depois de alguns segundos
+        if (!erro) {
+            temporizador = setTimeout(function () {
+                feedback.textContent = '';
+            }, 4000);
+        }
+    }
+
+    botao.addEventListener('click', async function () {
+        // Limpa antes, para a mensagem ser anunciada de novo a cada clique
+        feedback.textContent = '';
+        const copiou = await copiarTexto(botao.dataset.copiar);
+        // O campo temporário pode tirar o foco do botão: devolve o foco
+        botao.focus();
+
+        if (copiou) {
+            mostrarMensagem('E-mail copiado!', false);
+        } else {
+            mostrarMensagem('Não foi possível copiar. Selecione o endereço e copie manualmente.', true);
+        }
+    });
+});

@@ -486,16 +486,6 @@ a.inicio-contato:hover {
     height: 1.5rem;
 }
 
-/* Contato ainda sem endereço: aparece como texto, sem link */
-.inicio-contato-pendente {
-    color: var(--cor-texto-suave);
-}
-
-.inicio-contato-pendente small {
-    font-size: 0.8rem;
-    font-weight: 400;
-}
-
 /* ----- Ilustração do notebook ----- */
 .inicio-ilustracao {
     position: relative;
@@ -880,6 +870,274 @@ a.inicio-contato:hover {
     .projetos-lista {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+}
+
+/* ========== SOBRE MIM ========== */
+/* Celular: avatar acima do texto | tablet em diante: avatar à esquerda */
+.sobre-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+/* Avatar genérico: círculo com contorno roxo e ícone de pessoa */
+.sobre-avatar {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 5.5rem;
+    height: 5.5rem;
+    background-image: radial-gradient(closest-side, var(--cor-brilho), transparent);
+    border: 2px solid var(--cor-roxo-vivo);
+    border-radius: 50%;
+    color: var(--cor-roxo-vivo);
+}
+
+.sobre-avatar svg {
+    width: 55%;
+    height: 55%;
+}
+
+.sobre-texto {
+    min-width: 0;
+    max-width: 46rem;
+}
+
+.sobre-texto p {
+    margin: 0 0 0.85rem;
+}
+
+.sobre-texto strong {
+    color: var(--cor-texto);
+    font-weight: 600;
+}
+
+/* Áreas de interesse em forma de selos */
+.sobre-destaques {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sobre-destaques li {
+    padding: 0.3rem 0.85rem;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda-forte);
+    border-radius: 999px;
+    color: var(--cor-texto);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+@media (min-width: 48rem) {
+    .sobre-conteudo {
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .sobre-avatar {
+        width: 7rem;
+        height: 7rem;
+    }
+}
+
+/* ========== CONTATO ========== */
+.contato-texto {
+    max-width: 40rem;
+    margin: 0 0 1.25rem;
+}
+
+/* Celular e tablet: 1 coluna | a partir de 1024px: 3 colunas */
+.contato-lista {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contato-card {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    height: 100%;
+    /* Área de toque confortável no celular */
+    min-height: 4rem;
+    padding: 0.85rem 1rem;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-pequeno);
+    color: var(--cor-texto);
+    text-decoration: none;
+    transition: border-color var(--transicao), background-color var(--transicao);
+}
+
+.contato-card:hover {
+    border-color: var(--cor-borda-forte);
+    background-color: var(--cor-realce);
+}
+
+.contato-icone {
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    color: var(--cor-roxo-claro);
+}
+
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    line-height: 1.35;
+}
+
+.contato-nome {
+    font-weight: 600;
+}
+
+/* Endereço do contato: quebra a linha nos pontos marcados com <wbr> */
+.contato-valor {
+    color: var(--cor-texto-suave);
+    font-size: 0.85rem;
+    overflow-wrap: break-word;
+}
+
+/* Card de e-mail: dados em cima e as duas ações embaixo */
+.contato-card-email {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+}
+
+/* Não é um link: sem efeito de hover no card inteiro */
+.contato-card-email:hover {
+    border-color: var(--cor-borda);
+    background-color: var(--cor-fundo);
+}
+
+.contato-card-topo {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+/* O endereço pode ser selecionado e copiado manualmente */
+.contato-valor-selecionavel {
+    user-select: text;
+}
+
+/* Botões lado a lado quando cabem; empilhados quando não cabem */
+.contato-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+/* Os dois botões com a mesma altura fixa (42px) e o texto centralizado */
+.contato-acao {
+    flex: 1 1 8.5rem;
+    height: 42px;
+    padding: 0 1rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+/* Copiar e-mail depende do JavaScript: sem ele, o botão fica oculto */
+.botao-copiar {
+    display: none;
+    background-color: transparent;
+}
+
+.js .botao-copiar {
+    display: inline-flex;
+}
+
+/* Mensagem de resultado da cópia: fica vazia até o clique.
+   O espaço já fica reservado para o layout não "pular" quando ela aparece. */
+.contato-feedback {
+    min-height: 1.35em;
+    margin: -0.35rem 0 0;
+    color: var(--cor-roxo-claro);
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.contato-feedback.contato-feedback-erro {
+    color: var(--cor-texto);
+}
+
+/* A partir de 1024px: GitHub e LinkedIn lado a lado e, embaixo, o card
+   de e-mail na largura toda, com o endereço à esquerda e os botões à direita */
+@media (min-width: 64rem) {
+    .contato-lista {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contato-item-email {
+        grid-column: 1 / -1;
+    }
+
+    /* Uma única linha: endereço e botões centralizados entre si.
+       O espaço de cima e de baixo é igual, e o de baixo comporta a mensagem. */
+    .contato-card-email {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas: "topo acoes";
+        align-items: center;
+        gap: 0 1.5rem;
+        padding-block: 1.75rem;
+    }
+
+    .contato-card-topo {
+        grid-area: topo;
+    }
+
+    .contato-acoes {
+        grid-area: acoes;
+        flex-wrap: nowrap;
+    }
+
+    .contato-acao {
+        flex: 0 0 auto;
+    }
+
+    /* A mensagem ocupa a mesma linha dos botões (as duas colunas), alinhada
+       à direita, e é deslocada para logo abaixo deles com transform.
+       Assim não altera a altura do card, a centralização nem a largura da
+       coluna dos botões quando aparece ou some. */
+    .contato-feedback {
+        grid-area: 1 / 1 / 2 / -1;
+        align-self: end;
+        justify-self: end;
+        min-height: 0;
+        margin: 0;
+        white-space: nowrap;
+        text-align: right;
+        transform: translateY(calc(100% + 0.25rem));
+        pointer-events: none;
+    }
+}
+
+/* ========== UTILITÁRIOS ========== */
+/* Esconde o texto da tela, mas mantém para leitores de tela */
+.visualmente-oculto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* ========== ACESSIBILIDADE ========== */
