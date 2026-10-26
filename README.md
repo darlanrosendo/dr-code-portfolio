@@ -25,6 +25,7 @@ dr-code-portfolio/
 │   ├── js/
 │   │   └── main.js
 │   └── images/
+│       └── icones/       # ícones SVG das tecnologias
 └── docs/
     └── referencias/
         └── mockup-aprovado.png
@@ -38,6 +39,8 @@ O layout segue o mockup aprovado em `docs/referencias/mockup-aprovado.png`: fund
 - **Logo:** textual, com `D//R` em roxo e `CODE.` logo abaixo.
 - **Cabeçalho:** fixo no topo, com menu hambúrguer no celular e menu em linha a partir de 960px.
 - **Seção inicial:** apresentação, botões e contatos; ao lado (ou abaixo, no celular), um notebook com código C# feito apenas com HTML e CSS, sem imagens.
+- **Tecnologias:** oito cards (C#, .NET, HTML, CSS, JavaScript, Git, GitHub e SQL Server) com ícones SVG locais em `assets/images/icones/`. São 2 colunas no celular, 4 a partir de 768px e 8 a partir de 1200px. Os cards mostram apenas as tecnologias que estou aprendendo, sem níveis de experiência.
+- **Projetos:** três cards reservados (Projeto 01, 02 e 03, "Em breve"), em 1 coluna no celular, 2 a partir de 768px e 3 a partir de 1024px. Eles serão substituídos por projetos reais quando estiverem prontos.
 
 As cores ficam em variáveis CSS no início do `assets/css/style.css`, para facilitar mudanças na paleta:
 
@@ -78,7 +81,7 @@ Os commits seguem o padrão [Conventional Commits](https://www.conventionalcommi
 - [x] Etapa 2: Estrutura HTML inicial
 - [x] Etapa 3: Identidade visual e cabeçalho
 - [x] Etapa 4: Seção inicial com apresentação e ilustração
-- [ ] Etapa 5: Tecnologias e projetos
+- [x] Etapa 5: Tecnologias e projetos
 - [ ] Etapa 6: Sobre mim e contato
 - [ ] Etapa 7: Responsividade e animações
 - [ ] Etapa 8: Testes, revisão e publicação
