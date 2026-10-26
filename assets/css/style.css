@@ -1,0 +1,709 @@
+/* D/R Code - Folha de estilos principal */
+
+/* ========== VARIÁVEIS ========== */
+/* Para mudar a paleta do site, altere apenas os valores abaixo. */
+:root {
+    /* Cores */
+    --cor-fundo: #0A0A1F;
+    --cor-superficie: #11102B;
+    --cor-roxo: #7C3AED;
+    --cor-roxo-vivo: #8B5CF6;
+    --cor-roxo-claro: #A78BFA;
+    --cor-texto: #FFFFFF;
+    --cor-texto-suave: #C7C5DB;
+    --cor-borda: rgba(139, 92, 246, 0.25);
+    --cor-borda-forte: rgba(139, 92, 246, 0.6);
+    --cor-realce: rgba(139, 92, 246, 0.12);
+    --cor-fundo-cabecalho: rgba(10, 10, 31, 0.85);
+    --cor-brilho: rgba(124, 58, 237, 0.28);
+    --cor-brilho-suave: rgba(124, 58, 237, 0.1);
+
+    /* Cores do código na ilustração do notebook */
+    --cor-editor: #0D0C24;
+    --cor-codigo: #D9D6F2;
+    --cor-codigo-chave: #A78BFA;
+    --cor-codigo-tipo: #93C5FD;
+    --cor-codigo-texto: #F0ABFC;
+    --cor-codigo-numero: #5B5880;
+
+    /* Tipografia */
+    --fonte-principal: "Montserrat", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --fonte-codigo: "Cascadia Code", Consolas, "Courier New", monospace;
+
+    /* Medidas */
+    --largura-conteudo: 1200px;
+    --margem-lateral: 1rem;
+    --altura-cabecalho: 64px;
+    --espaco-cabecalho: 0.75rem;
+    --raio: 14px;
+    --raio-pequeno: 10px;
+    --transicao: 0.2s ease;
+    --sombra-roxa: 0 6px 20px rgba(124, 58, 237, 0.3);
+}
+
+@media (min-width: 60rem) {
+    :root {
+        --margem-lateral: 2rem;
+        --altura-cabecalho: 72px;
+    }
+}
+
+/* ========== RESET E BASE ========== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Evita que o cabeçalho fixo cubra o início das seções */
+    scroll-padding-top: calc(var(--altura-cabecalho) + var(--espaco-cabecalho) * 2);
+}
+
+body {
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-suave);
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--cor-texto);
+    line-height: 1.2;
+}
+
+a {
+    color: var(--cor-roxo-claro);
+}
+
+:focus-visible {
+    outline: 2px solid var(--cor-roxo-claro);
+    outline-offset: 3px;
+}
+
+main {
+    max-width: var(--largura-conteudo);
+    margin: 0 auto;
+    padding: 0 var(--margem-lateral);
+}
+
+/* ========== BOTÕES ========== */
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.4rem;
+    border: 1px solid transparent;
+    border-radius: var(--raio-pequeno);
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color var(--transicao), border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.botao-primario {
+    background-color: var(--cor-roxo);
+    color: var(--cor-texto);
+}
+
+.botao-primario:hover {
+    background-color: var(--cor-roxo-vivo);
+    box-shadow: var(--sombra-roxa);
+}
+
+.botao-secundario {
+    border-color: var(--cor-borda-forte);
+    color: var(--cor-texto);
+}
+
+.botao-secundario:hover {
+    border-color: var(--cor-roxo-claro);
+    background-color: var(--cor-realce);
+}
+
+/* ========== CABEÇALHO ========== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: var(--espaco-cabecalho) var(--margem-lateral);
+}
+
+.header-conteudo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    max-width: var(--largura-conteudo);
+    min-height: var(--altura-cabecalho);
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    background-color: var(--cor-fundo-cabecalho);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    backdrop-filter: blur(10px);
+}
+
+/* Logo */
+.logo {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.logo-marca {
+    color: var(--cor-roxo-vivo);
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    transition: color var(--transicao);
+}
+
+.logo-texto {
+    margin-top: 0.15rem;
+    color: var(--cor-texto);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.logo:hover .logo-marca {
+    color: var(--cor-roxo-claro);
+}
+
+/* Botão do menu (celular) - só aparece quando o JavaScript está ativo */
+.menu-botao {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background-color: transparent;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-pequeno);
+    cursor: pointer;
+    transition: border-color var(--transicao), background-color var(--transicao);
+}
+
+.js .menu-botao {
+    display: inline-flex;
+}
+
+.menu-botao:hover {
+    border-color: var(--cor-borda-forte);
+    background-color: var(--cor-realce);
+}
+
+.menu-botao-icone,
+.menu-botao-icone::before,
+.menu-botao-icone::after {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--cor-texto);
+    border-radius: 2px;
+    transition: transform var(--transicao), background-color var(--transicao);
+}
+
+.menu-botao-icone {
+    position: relative;
+}
+
+.menu-botao-icone::before,
+.menu-botao-icone::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.menu-botao-icone::before {
+    top: -6px;
+}
+
+.menu-botao-icone::after {
+    top: 6px;
+}
+
+/* Ícone vira um "X" quando o menu está aberto */
+.menu-botao[aria-expanded="true"] .menu-botao-icone {
+    background-color: transparent;
+}
+
+.menu-botao[aria-expanded="true"] .menu-botao-icone::before {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-botao[aria-expanded="true"] .menu-botao-icone::after {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Menu (celular): lista em coluna abaixo da barra */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+/* Com JavaScript, o menu fica fechado até o botão ser acionado */
+.js .menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+    width: auto;
+    padding: 1rem;
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+}
+
+.js .menu.menu-aberto {
+    display: flex;
+}
+
+.menu-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-lista a {
+    position: relative;
+    display: block;
+    /* Altura mínima de toque recomendada para celular */
+    min-height: 44px;
+    padding: 0.625rem 0.5rem;
+    border-radius: var(--raio-pequeno);
+    color: var(--cor-texto-suave);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color var(--transicao), background-color var(--transicao);
+}
+
+.menu-lista a:hover,
+.menu-lista a:focus-visible {
+    color: var(--cor-texto);
+    background-color: var(--cor-realce);
+}
+
+/* Menu (desktop): itens em linha, sem botão hambúrguer */
+@media (min-width: 60rem) {
+    .header-conteudo {
+        flex-wrap: nowrap;
+        padding: 0.5rem 1.75rem;
+    }
+
+    .js .menu-botao {
+        display: none;
+    }
+
+    .menu,
+    .js .menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        width: auto;
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+    }
+
+    .menu-lista {
+        flex-direction: row;
+        gap: 1.75rem;
+    }
+
+    .menu-lista a {
+        min-height: 0;
+        padding: 0.5rem 0.25rem;
+    }
+
+    .menu-lista a:hover,
+    .menu-lista a:focus-visible {
+        background-color: transparent;
+    }
+
+    /* Sublinhado que aparece no hover e no foco */
+    .menu-lista a::after {
+        content: "";
+        position: absolute;
+        left: 0.25rem;
+        right: 0.25rem;
+        bottom: 0;
+        height: 2px;
+        background-color: var(--cor-roxo-vivo);
+        border-radius: 2px;
+        transform: scaleX(0);
+        transition: transform var(--transicao);
+    }
+
+    .menu-lista a:hover::after,
+    .menu-lista a:focus-visible::after {
+        transform: scaleX(1);
+    }
+}
+
+/* ========== INÍCIO (HERO) ========== */
+/* Celular: uma coluna, com o texto primeiro e o notebook abaixo */
+.inicio {
+    display: grid;
+    gap: 2rem;
+    padding: 2.5rem 0 3.5rem;
+    /* Brilho roxo suave atrás do texto */
+    background-image: radial-gradient(closest-side at 30% 35%, var(--cor-brilho-suave), transparent);
+    background-repeat: no-repeat;
+}
+
+/* Evita que o conteúdo force a coluna a ficar mais larga que a tela */
+.inicio-conteudo,
+.inicio-ilustracao {
+    min-width: 0;
+}
+
+.destaque {
+    color: var(--cor-roxo-vivo);
+    /* Mantém as palavras em destaque juntas na mesma linha */
+    white-space: nowrap;
+}
+
+.inicio-titulo {
+    margin: 0;
+}
+
+/* "Olá, eu sou": linha pequena acima do nome */
+.inicio-saudacao {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    color: var(--cor-texto-suave);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.inicio-saudacao::before {
+    content: "";
+    width: 1.75rem;
+    height: 2px;
+    background-color: var(--cor-roxo-vivo);
+    border-radius: 2px;
+}
+
+.inicio-nome {
+    display: block;
+    font-size: clamp(2.5rem, 11vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.inicio-subtitulo {
+    margin: 0.75rem 0 0;
+    color: var(--cor-texto);
+    font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.inicio-texto {
+    max-width: 36rem;
+    margin: 1rem 0 0;
+    font-size: 1.05rem;
+}
+
+/* Botões */
+.inicio-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+}
+
+/* No celular os botões ocupam a largura disponível */
+.inicio-botoes .botao {
+    flex: 1 1 12rem;
+    min-height: 48px;
+}
+
+@media (min-width: 30rem) {
+    .inicio-botoes .botao {
+        flex: 0 0 auto;
+    }
+}
+
+/* Contatos (GitHub, LinkedIn e e-mail) */
+.inicio-contatos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.75rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.inicio-contato {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: 44px;
+    color: var(--cor-texto);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color var(--transicao);
+}
+
+a.inicio-contato:hover {
+    color: var(--cor-roxo-claro);
+}
+
+.inicio-contato-icone {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Contato ainda sem endereço: aparece como texto, sem link */
+.inicio-contato-pendente {
+    color: var(--cor-texto-suave);
+}
+
+.inicio-contato-pendente small {
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+/* ----- Ilustração do notebook ----- */
+.inicio-ilustracao {
+    position: relative;
+}
+
+/* Brilho roxo suave atrás do notebook */
+.inicio-ilustracao::before {
+    content: "";
+    position: absolute;
+    inset: -12% 0;
+    background-image: radial-gradient(closest-side, var(--cor-brilho), transparent);
+    pointer-events: none;
+}
+
+.notebook {
+    position: relative;
+    width: 88%;
+    max-width: 34rem;
+    margin: 0 auto;
+}
+
+/* Tela do notebook: uma janela de editor de código */
+.notebook-tela {
+    /* Permite que o tamanho do código acompanhe a largura da tela (unidade cqw) */
+    container-type: inline-size;
+    overflow: hidden;
+    background-color: var(--cor-editor);
+    border: 2px solid var(--cor-borda-forte);
+    border-bottom: 0;
+    border-radius: var(--raio) var(--raio) 0 0;
+    box-shadow: 0 0 40px var(--cor-brilho-suave);
+}
+
+.editor-barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.editor-aba {
+    color: var(--cor-texto-suave);
+    font-family: var(--fonte-codigo);
+    font-size: 0.7rem;
+}
+
+.editor-controles {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.editor-controles span {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--cor-borda-forte);
+    border-radius: 50%;
+}
+
+.editor-codigo {
+    margin: 0;
+    padding: 4cqw 3cqw 6cqw;
+    color: var(--cor-codigo);
+    font-family: var(--fonte-codigo);
+    /* A segunda linha vale nos navegadores atuais; a primeira é reserva */
+    font-size: 0.55rem;
+    font-size: 2.55cqw;
+    line-height: 1.7;
+    /* Faz o contador de linhas começar do 1 */
+    counter-reset: linha;
+}
+
+.editor-codigo code {
+    font-family: inherit;
+}
+
+/* Número de cada linha, como em um editor de código */
+.linha::before {
+    counter-increment: linha;
+    content: counter(linha);
+    display: inline-block;
+    width: 2ch;
+    margin-right: 2ch;
+    color: var(--cor-codigo-numero);
+    text-align: right;
+}
+
+.cod-chave {
+    color: var(--cor-codigo-chave);
+}
+
+.cod-tipo {
+    color: var(--cor-codigo-tipo);
+}
+
+.cod-texto {
+    color: var(--cor-codigo-texto);
+}
+
+/* Base do notebook: um pouco mais larga que a tela */
+.notebook-base {
+    position: relative;
+    height: 0.8rem;
+    margin: 0 -6%;
+    background-image: linear-gradient(#4A4380, #1C193D);
+    border-radius: 0 0 1rem 1rem;
+}
+
+/* Recorte central da base */
+.notebook-base::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 16%;
+    height: 0.3rem;
+    background-color: var(--cor-fundo);
+    border-radius: 0 0 0.5rem 0.5rem;
+    opacity: 0.6;
+    transform: translateX(-50%);
+}
+
+/* Etiquetas: ficam ocultas no celular */
+.etiquetas {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Desktop: duas colunas, com o texto à esquerda e o notebook à direita */
+@media (min-width: 60rem) {
+    .inicio {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 2rem;
+        padding: 4rem 0 5rem;
+    }
+
+    .inicio-nome {
+        font-size: clamp(2.75rem, 4.4vw, 3.75rem);
+    }
+
+    .inicio-subtitulo {
+        font-size: clamp(1.05rem, 1.45vw, 1.3rem);
+    }
+
+    .notebook {
+        width: 80%;
+        /* Leve inclinação, como no mockup */
+        transform: perspective(1200px) rotateY(-8deg) rotateX(2deg);
+    }
+
+    .etiquetas {
+        display: block;
+    }
+
+    .etiqueta {
+        position: absolute;
+        padding: 0.4rem 0.9rem;
+        background-color: var(--cor-superficie);
+        border: 1px solid var(--cor-borda);
+        border-radius: var(--raio-pequeno);
+        color: var(--cor-texto);
+        font-size: 0.85rem;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    /* Posição de cada etiqueta ao redor do notebook */
+    .etiqueta-1 {
+        top: 8%;
+        left: 0;
+    }
+
+    .etiqueta-2 {
+        top: 38%;
+        left: 0;
+    }
+
+    .etiqueta-3 {
+        top: 2%;
+        right: 0;
+    }
+
+    .etiqueta-4 {
+        top: 24%;
+        right: -1rem;
+    }
+
+    .etiqueta-5 {
+        top: 76%;
+        right: -1rem;
+    }
+}
+
+/* ========== ACESSIBILIDADE ========== */
+/* Respeita quem prefere menos movimento na tela */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}
+
+/* Os estilos das demais seções serão adicionados nas próximas etapas */

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Darlan Rosendo, desenvolvedor em formação.">
+    <title>D/R Code | Darlan Rosendo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- ========== CABEÇALHO ========== -->
+    <header class="header">
+        <div class="header-conteudo">
+            <a href="#inicio" class="logo" aria-label="D/R Code - voltar ao início">
+                <span class="logo-marca">D//R</span>
+                <span class="logo-texto">CODE.</span>
+            </a>
+
+            <!-- Botão do menu no celular (controlado pelo main.js) -->
+            <button type="button" class="menu-botao" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <span class="menu-botao-icone" aria-hidden="true"></span>
+            </button>
+
+            <nav id="menu-principal" class="menu" aria-label="Navegação principal">
+                <ul class="menu-lista">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#tecnologias">Tecnologias</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+
+                <a href="#contato" class="botao botao-secundario menu-cta">
+                    Vamos conversar <span aria-hidden="true">&rarr;</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ========== INÍCIO ========== -->
+        <section id="inicio" class="inicio">
+            <div class="inicio-conteudo">
+                <h1 class="inicio-titulo">
+                    <span class="inicio-saudacao">Olá, eu sou</span>
+                    <span class="inicio-nome">Darlan <span class="destaque">Rosendo.</span></span>
+                </h1>
+                <p class="inicio-subtitulo">Desenvolvedor em formação | <span class="destaque">Software &amp; Web</span></p>
+                <p class="inicio-texto">
+                    Estou aprendendo C# e .NET, desenvolvendo projetos web na prática
+                    e evoluindo continuamente como desenvolvedor.
+                </p>
+
+                <div class="inicio-botoes">
+                    <a href="#projetos" class="botao botao-primario">
+                        Ver meus projetos <span aria-hidden="true">&rarr;</span>
+                    </a>
+                    <a href="#contato" class="botao botao-secundario">Entrar em contato</a>
+                </div>
+
+                <ul class="inicio-contatos" aria-label="Meus contatos">
+                    <li>
+                        <a href="https://github.com/darlanrosendo" class="inicio-contato" target="_blank" rel="noopener noreferrer">
+                            <svg class="inicio-contato-icone" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                            </svg>
+                            GitHub
+                        </a>
+                    </li>
+                    <!-- LinkedIn: [a definir] - oculto até o endereço ser definido.
+                         Para exibir: remover o atributo "hidden" e trocar o <span> por um link. -->
+                    <li hidden>
+                        <span class="inicio-contato inicio-contato-pendente">
+                            <svg class="inicio-contato-icone" viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" aria-hidden="true" focusable="false">
+                                <path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm2 8v8h2.5v-8H6zm1.25-4a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9zM10.5 10v8H13v-4.3c0-1.1.7-1.8 1.6-1.8.9 0 1.4.6 1.4 1.8V18h2.5v-4.9c0-2.1-1.2-3.3-2.9-3.3-1.1 0-2 .5-2.6 1.3V10h-2.5z"/>
+                            </svg>
+                            LinkedIn <small>(em breve)</small>
+                        </span>
+                    </li>
+                    <li>
+                        <a href="mailto:darlanbarbosa8@gmail.com" class="inicio-contato">
+                            <svg class="inicio-contato-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                <path d="m3 7 9 6 9-6"/>
+                            </svg>
+                            E-mail
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Ilustração decorativa: notebook feito com HTML e CSS (oculta dos leitores de tela) -->
+            <div class="inicio-ilustracao" aria-hidden="true">
+                <div class="notebook">
+                    <div class="notebook-tela">
+                        <div class="editor-barra">
+                            <span class="editor-aba">Program.cs</span>
+                            <span class="editor-controles"><span></span><span></span><span></span></span>
+                        </div>
+<pre class="editor-codigo"><code><span class="linha"><span class="cod-chave">using</span> System;</span>
+<span class="linha"></span>
+<span class="linha"><span class="cod-chave">namespace</span> <span class="cod-tipo">Portfolio</span>;</span>
+<span class="linha"></span>
+<span class="linha"><span class="cod-chave">class</span> <span class="cod-tipo">Program</span></span>
+<span class="linha">{</span>
+<span class="linha">    <span class="cod-chave">static void</span> Main(<span class="cod-chave">string</span>[] args)</span>
+<span class="linha">    {</span>
+<span class="linha">        <span class="cod-tipo">Console</span>.WriteLine(<span class="cod-texto">"Olá, mundo!"</span>);</span>
+<span class="linha">        <span class="cod-tipo">Console</span>.WriteLine(<span class="cod-texto">"Em constante evolução..."</span>);</span>
+<span class="linha">    }</span>
+<span class="linha">}</span></code></pre>
+                    </div>
+                    <div class="notebook-base"></div>
+                </div>
+
+                <!-- Etiquetas ao redor do notebook (aparecem só no desktop) -->
+                <ul class="etiquetas">
+                    <li class="etiqueta etiqueta-1">C#</li>
+                    <li class="etiqueta etiqueta-2">.NET</li>
+                    <li class="etiqueta etiqueta-3">Git</li>
+                    <li class="etiqueta etiqueta-4">SQL Server</li>
+                    <li class="etiqueta etiqueta-5">Front-end</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ========== TECNOLOGIAS ========== -->
+        <section id="tecnologias" class="tecnologias">
+            <h2>Tecnologias</h2>
+
+            <ul class="tecnologias-lista">
+                <li class="tecnologia-card">C#</li>
+                <li class="tecnologia-card">.NET</li>
+                <li class="tecnologia-card">HTML</li>
+                <li class="tecnologia-card">CSS</li>
+                <li class="tecnologia-card">JavaScript</li>
+                <li class="tecnologia-card">Git</li>
+                <li class="tecnologia-card">GitHub</li>
+                <li class="tecnologia-card">SQL Server</li>
+            </ul>
+        </section>
+
+        <!-- ========== PROJETOS ========== -->
+        <section id="projetos" class="projetos">
+            <h2>Projetos</h2>
+
+            <!--
+                Os cards abaixo são espaços reservados (placeholders).
+                Para adicionar um projeto real, substitua em um card:
+                imagem, nome, descrição, tecnologias e links.
+            -->
+            <div class="projetos-lista">
+
+                <article class="projeto-card">
+                    <div class="projeto-imagem">[Imagem do projeto]</div>
+                    <h3 class="projeto-nome">[Nome do projeto]</h3>
+                    <p class="projeto-descricao">[Espaço reservado: breve descrição do projeto.]</p>
+                    <ul class="projeto-tecnologias" aria-label="Tecnologias utilizadas">
+                        <li>[Tecnologia]</li>
+                    </ul>
+                    <ul class="projeto-links">
+                        <li>[Link do GitHub: a definir]</li>
+                        <li>[Link para visualizar: a definir]</li>
+                    </ul>
+                </article>
+
+                <article class="projeto-card">
+                    <div class="projeto-imagem">[Imagem do projeto]</div>
+                    <h3 class="projeto-nome">[Nome do projeto]</h3>
+                    <p class="projeto-descricao">[Espaço reservado: breve descrição do projeto.]</p>
+                    <ul class="projeto-tecnologias" aria-label="Tecnologias utilizadas">
+                        <li>[Tecnologia]</li>
+                    </ul>
+                    <ul class="projeto-links">
+                        <li>[Link do GitHub: a definir]</li>
+                        <li>[Link para visualizar: a definir]</li>
+                    </ul>
+                </article>
+
+                <article class="projeto-card">
+                    <div class="projeto-imagem">[Imagem do projeto]</div>
+                    <h3 class="projeto-nome">[Nome do projeto]</h3>
+                    <p class="projeto-descricao">[Espaço reservado: breve descrição do projeto.]</p>
+                    <ul class="projeto-tecnologias" aria-label="Tecnologias utilizadas">
+                        <li>[Tecnologia]</li>
+                    </ul>
+                    <ul class="projeto-links">
+                        <li>[Link do GitHub: a definir]</li>
+                        <li>[Link para visualizar: a definir]</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ========== SOBRE MIM ========== -->
+        <section id="sobre" class="sobre">
+            <h2>Sobre mim</h2>
+            <p>
+                Sou Darlan Rosendo, desenvolvedor em formação com interesse em C# e
+                desenvolvimento web. Gosto de aprender novas tecnologias, resolver
+                problemas e transformar ideias em projetos práticos.
+            </p>
+        </section>
+
+        <!-- ========== CONTATO ========== -->
+        <section id="contato" class="contato">
+            <h2>Contato</h2>
+
+            <!-- Espaços reservados: os links reais serão adicionados depois -->
+            <ul class="contato-lista">
+                <li class="contato-item">
+                    <span class="contato-nome">GitHub</span>
+                    <span class="contato-valor">[a definir]</span>
+                </li>
+                <li class="contato-item">
+                    <span class="contato-nome">LinkedIn</span>
+                    <span class="contato-valor">[a definir]</span>
+                </li>
+                <li class="contato-item">
+                    <span class="contato-nome">E-mail</span>
+                    <span class="contato-valor">[a definir]</span>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- ========== RODAPÉ ========== -->
+    <footer class="footer">
+        <p>&copy; 2026 Darlan Rosendo. D/R Code.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
