@@ -3,15 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Darlan Rosendo, desenvolvedor em formação.">
-    <title>D/R Code | Darlan Rosendo</title>
+    <title>Darlan Rosendo | Desenvolvedor em Formação — D/R Code</title>
+    <meta name="description" content="Portfólio de Darlan Rosendo, desenvolvedor em formação com foco em C#, .NET e desenvolvimento web. Conheça minhas tecnologias e acompanhe meus projetos.">
+    <meta name="author" content="Darlan Rosendo">
+    <meta name="theme-color" content="#0A0A1F">
+
+    <!-- Compartilhamento em redes sociais (Open Graph).
+         og:url e og:image dependem do endereço público do site (Etapa 9). -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="D/R Code">
+    <meta property="og:title" content="Darlan Rosendo | Desenvolvedor em Formação — D/R Code">
+    <meta property="og:description" content="Portfólio de Darlan Rosendo, desenvolvedor em formação com foco em C#, .NET e desenvolvimento web. Conheça minhas tecnologias e acompanhe meus projetos.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Darlan Rosendo | Desenvolvedor em Formação — D/R Code">
+    <meta name="twitter:description" content="Portfólio de Darlan Rosendo, desenvolvedor em formação com foco em C#, .NET e desenvolvimento web. Conheça minhas tecnologias e acompanhe meus projetos.">
+
+    <!-- Marca que o JavaScript está ativo antes da primeira pintura da página.
+         Sem isso, no celular o menu aparece aberto por um instante e depois
+         some, deslocando todo o conteúdo. -->
+    <script>document.documentElement.classList.add('js');</script>
+
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+    <!-- Pré-carrega a fonte: ela chega antes da primeira pintura e o texto
+         não muda de tamanho (medido com o Lighthouse: CLS 0 no celular) -->
+    <link rel="preload" href="assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
+    <!-- Atalho para quem navega pelo teclado: aparece só ao receber foco -->
+    <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
 
     <!-- ========== CABEÇALHO ========== -->
     <header class="header">
@@ -42,7 +64,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="conteudo">
 
         <!-- ========== INÍCIO ========== -->
         <section id="inicio" class="inicio">
@@ -64,13 +86,14 @@
                     <a href="#contato" class="botao botao-secundario">Entrar em contato</a>
                 </div>
 
-                <ul class="inicio-contatos" aria-label="Meus contatos">
+                <ul class="inicio-contatos">
                     <li>
                         <a href="https://github.com/darlanrosendo" class="inicio-contato" target="_blank" rel="noopener noreferrer">
                             <svg class="inicio-contato-icone" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
                                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                             </svg>
                             GitHub
+                            <span class="visualmente-oculto">(abre em nova aba)</span>
                         </a>
                     </li>
                     <li>
@@ -79,6 +102,7 @@
                                 <path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm2 8v8h2.5v-8H6zm1.25-4a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9zM10.5 10v8H13v-4.3c0-1.1.7-1.8 1.6-1.8.9 0 1.4.6 1.4 1.8V18h2.5v-4.9c0-2.1-1.2-3.3-2.9-3.3-1.1 0-2 .5-2.6 1.3V10h-2.5z"/>
                             </svg>
                             LinkedIn
+                            <span class="visualmente-oculto">(abre em nova aba)</span>
                         </a>
                     </li>
                     <li>
@@ -240,7 +264,9 @@
                         problemas e de transformar ideias em soluções organizadas e funcionais.
                     </p>
 
-                    <ul class="sobre-destaques" aria-label="Áreas de interesse">
+                    <!-- Título só para leitores de tela: identifica a lista de selos abaixo -->
+                    <h3 class="visualmente-oculto">Áreas de interesse</h3>
+                    <ul class="sobre-destaques">
                         <li>C# e .NET</li>
                         <li>Desenvolvimento de software</li>
                         <li>Desenvolvimento web</li>
