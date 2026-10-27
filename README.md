@@ -18,25 +18,26 @@ O objetivo do projeto é apresentar meus conhecimentos, projetos e evolução pr
 dr-code-portfolio/
 ├── index.html
 ├── README.md
+├── sitemap.xml          # mapa do site para buscadores
+├── .nojekyll            # GitHub Pages sem processamento Jekyll
 ├── .gitignore
-├── assets/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── main.js
-│   ├── fonts/
-│   │   ├── montserrat-latin.woff2   # fonte Montserrat (hospedada no projeto)
-│   │   └── OFL.txt                  # licença da fonte
-│   └── images/
-│       └── icones/       # ícones SVG das tecnologias
-└── docs/
-    └── referencias/
-        └── mockup-aprovado.png
+└── assets/
+    ├── css/
+    │   └── style.css
+    ├── js/
+    │   └── main.js
+    ├── fonts/
+    │   ├── montserrat-latin.woff2   # fonte Montserrat (hospedada no projeto)
+    │   └── OFL.txt                  # licença da fonte
+    └── images/
+        ├── favicon.svg
+        ├── compartilhamento.png     # imagem para redes sociais (1200×630)
+        └── icones/                  # ícones SVG das tecnologias
 ```
 
 ## Identidade visual
 
-O layout segue o mockup aprovado em `docs/referencias/mockup-aprovado.png`: fundo escuro, roxo como cor de destaque, bordas discretas e cantos arredondados.
+O layout segue o mockup aprovado no início do projeto: fundo escuro, roxo como cor de destaque, bordas discretas e cantos arredondados. O mockup era só material de referência e não faz parte do site publicado.
 
 - **Tipografia:** Montserrat, hospedada no próprio projeto (`assets/fonts/`). É o arquivo variável oficial do Google Fonts (subconjunto latin, v31), que cobre todos os pesos usados (400 a 800), distribuído sob a SIL Open Font License 1.1 (`assets/fonts/OFL.txt`). O site não carrega nenhum recurso externo.
 - **Logo:** textual, com `D//R` em roxo e `CODE.` logo abaixo.
@@ -47,6 +48,19 @@ O layout segue o mockup aprovado em `docs/referencias/mockup-aprovado.png`: fund
 - **Sobre mim:** painel com avatar genérico (ícone, sem foto), texto de apresentação e selos com as áreas de interesse. No celular o avatar fica acima do texto; a partir de 768px, ao lado.
 - **Contato:** breve convite e três cards com ícone, nome e endereço: GitHub, LinkedIn e E-mail. O card de e-mail tem dois botões, **Enviar e-mail** e **Copiar e-mail**, lado a lado quando há espaço e empilhados quando não há. Até 1023px os cards ficam em 1 coluna; a partir de 1024px, GitHub e LinkedIn ficam lado a lado e o card de e-mail ocupa a largura toda, embaixo. Não há formulário de contato.
 - **Rodapé:** texto centralizado em cinza discreto (`--cor-texto-discreto`, contraste 6,99:1), com a mesma largura máxima e margens do conteúdo.
+
+As cores ficam em variáveis CSS no início do `assets/css/style.css`, para facilitar mudanças na paleta:
+
+| Variável              | Cor       | Uso                           |
+| --------------------- | --------- | ----------------------------- |
+| `--cor-fundo`         | `#0A0A1F` | Fundo do site                 |
+| `--cor-superficie`    | `#11102B` | Fundo de painéis e do menu    |
+| `--cor-roxo`          | `#7C3AED` | Botão principal               |
+| `--cor-roxo-vivo`     | `#8B5CF6` | Logo e detalhes de destaque   |
+| `--cor-roxo-claro`    | `#A78BFA` | Links e contorno de foco      |
+| `--cor-texto`         | `#FFFFFF` | Títulos                       |
+| `--cor-texto-suave`   | `#C7C5DB` | Texto corrido                 |
+| `--cor-texto-discreto`| `#9A98B4` | Rodapé                        |
 - **Contatos no Hero:** GitHub, LinkedIn e E-mail. No celular estreito, os contatos podem quebrar para uma segunda linha.
 
 ### Contatos oficiais
@@ -112,23 +126,48 @@ Revisão de SEO, acessibilidade, desempenho e qualidade do código, preservando 
 - Navegação por teclado, menu mobile, atalho, movimento reduzido, links, botão Copiar e-mail e erros de console.
 - Os links `mailto:` foram conferidos pelos atributos, sem clique, para não abrir o seletor de aplicativos do Windows.
 
-**Pendências que dependem da publicação (Etapa 9)**
+Os itens que dependiam do endereço público foram tratados na Etapa 9 (abaixo).
 
-- `og:url`, `og:image` e URL canônica, que precisam do endereço público do site.
-- `robots.txt` e `sitemap.xml`, que também usam o endereço público.
-- Compressão e cache dos arquivos, que são configurados pelo servidor de hospedagem.
+## Preparação para publicação (Etapa 9)
 
-As cores ficam em variáveis CSS no início do `assets/css/style.css`, para facilitar mudanças na paleta:
+O site será publicado no **GitHub Pages gratuito**, sem domínio próprio, no endereço planejado:
 
-| Variável              | Cor       | Uso                           |
-| --------------------- | --------- | ----------------------------- |
-| `--cor-fundo`         | `#0A0A1F` | Fundo do site                 |
-| `--cor-superficie`    | `#11102B` | Fundo de painéis e do menu    |
-| `--cor-roxo`          | `#7C3AED` | Botão principal               |
-| `--cor-roxo-vivo`     | `#8B5CF6` | Logo e detalhes de destaque   |
-| `--cor-roxo-claro`    | `#A78BFA` | Links e contorno de foco      |
-| `--cor-texto`         | `#FFFFFF` | Títulos                       |
-| `--cor-texto-suave`   | `#C7C5DB` | Texto corrido                 |
+**https://darlanrosendo.github.io/dr-code-portfolio/**
+
+> O site **ainda não está publicado**. Esta etapa apenas prepara os arquivos.
+
+**O que foi preparado**
+
+- **Caminhos relativos:** HTML, CSS, JavaScript, ícones SVG, favicon e a fonte local usam caminhos relativos (`assets/...`), então funcionam dentro da subpasta `/dr-code-portfolio/`.
+- **`.nojekyll`:** arquivo vazio na raiz que faz o GitHub Pages servir os arquivos como estão, sem processá-los com o Jekyll.
+- **URL canônica e `og:url`:** apontam para o endereço público planejado.
+- **Imagem de compartilhamento:** `assets/images/compartilhamento.png` (1200×630), com o logo D//R CODE, o nome, "Desenvolvedor em formação | Software & Web", os selos C#, .NET e Desenvolvimento web e o mesmo código C# do notebook do site. Configurada em `og:image` (com tipo, tamanho e texto alternativo) e no cartão grande do Twitter/X (`summary_large_image`).
+- **Mockup removido:** a imagem de referência do layout (`docs/referencias/mockup-aprovado.png`) saiu do projeto, para não ficar acessível no site publicado.
+- **`sitemap.xml`:** lista a página do site com o endereço público.
+- **`robots.txt`:** não foi criado de propósito. Num site em subpasta, os buscadores só leem o `robots.txt` da raiz do domínio (`darlanrosendo.github.io/robots.txt`), então ele não teria efeito. O sitemap deve ser enviado pelo Google Search Console depois da publicação.
+
+**Testes realizados (servidor local imitando o GitHub Pages em `/dr-code-portfolio/`)**
+
+- Todos os recursos carregados dentro da subpasta, sem nenhum erro 404 e sem nenhum recurso externo.
+- Página idêntica, pixel a pixel, à versão da `develop` em 320, 375, 768, 1024 e 1440px.
+- Fonte local, menu responsivo, atalho de teclado, âncoras, botão Copiar e-mail, links do GitHub e do LinkedIn e `mailto:` (conferido pelos atributos, sem clique).
+- `sitemap.xml` validado como XML, com o mesmo endereço da URL canônica e do `og:url`.
+- Validação do HTML (`html-validate`) e Lighthouse 12.6.1: 100 em desempenho, acessibilidade, boas práticas e SEO, no celular e no desktop.
+
+**Como publicar (quando aprovado)**
+
+1. Integrar a `feature/preparacao-publicacao` na `develop` por Pull Request.
+2. Abrir um Pull Request da `develop` para a `master` e fazer o merge.
+3. No GitHub, em **Settings → Pages**, escolher **Deploy from a branch**, branch `master`, pasta `/ (root)`, e salvar.
+4. Aguardar a publicação e conferir o endereço público.
+5. Repetir os testes e o Lighthouse no site publicado.
+6. Enviar o `sitemap.xml` pelo Google Search Console (opcional).
+
+**Pendências antes de ativar o GitHub Pages**
+
+- **Imagem de compartilhamento:** aguarda aprovação visual antes do commit.
+- **Prévia nas redes sociais:** só pode ser conferida depois da publicação, porque as redes precisam acessar a imagem pelo endereço público.
+- **Compressão e cache:** configurados pelo próprio GitHub Pages; conferir no site publicado.
 
 ## Como visualizar
 
@@ -160,8 +199,8 @@ Os commits seguem o padrão [Conventional Commits](https://www.conventionalcommi
 - [x] Etapa 5: Tecnologias e projetos
 - [x] Etapa 6: Sobre mim e contato
 - [ ] Etapa 7: Inclusão dos projetos reais (adiada até os projetos ficarem prontos)
-- [ ] Etapa 8: Revisão geral, SEO, desempenho e acessibilidade (em revisão)
-- [ ] Etapa 9: Publicação
+- [x] Etapa 8: Revisão geral, SEO, desempenho e acessibilidade
+- [ ] Etapa 9: Publicação no GitHub Pages (em preparação, ainda não publicado)
 
 ## Autor
 
