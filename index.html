@@ -3,14 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Darlan Rosendo, desenvolvedor em formação.">
-    <title>D/R Code | Darlan Rosendo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+    <title>Darlan Rosendo | Desenvolvedor em Formação — D/R Code</title>
+    <meta name="description" content="Portfólio de Darlan Rosendo, desenvolvedor em formação com foco em C#, .NET e desenvolvimento web. Conheça minhas tecnologias e acompanhe meus projetos.">
+    <meta name="author" content="Darlan Rosendo">
+    <meta name="theme-color" content="#0A0A1F">
+
+    <!-- Endereço público oficial (GitHub Pages) -->
+    <link rel="canonical" href="https://darlanrosendo.github.io/dr-code-portfolio/">
+
+    <!-- Compartilhamento em redes sociais (Open Graph).
+         As redes sociais exigem endereços absolutos para a imagem. -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://darlanrosendo.github.io/dr-code-portfolio/">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="D/R Code">
+    <meta property="og:title" content="Darlan Rosendo | Desenvolvedor em Formação — D/R Code">
+    <meta property="og:description" content="Portfólio de Darlan Rosendo, desenvolvedor em formação com foco em C#, .NET e desenvolvimento web. Conheça minhas tecnologias e acompanhe meus projetos.">
+    <meta property="og:image" content="https://darlanrosendo.github.io/dr-code-portfolio/assets/images/compartilhamento.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="D/R Code: Darlan Rosendo, desenvolvedor em formação em Software e Web, com C#, .NET e desenvolvimento web.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://darlanrosendo.github.io/dr-code-portfolio/assets/images/compartilhamento.png">
+    <meta name="twitter:image:alt" content="D/R Code: Darlan Rosendo, desenvolvedor em formação em Software e Web, com C#, .NET e desenvolvimento web.">
+    <meta name="twitter:title" content="Darlan Rosendo | Desenvolvedor em Formação — D/R Code">
+    <meta name="twitter:description" content="Portfólio de Darlan Rosendo, desenvolvedor em formação com foco em C#, .NET e desenvolvimento web. Conheça minhas tecnologias e acompanhe meus projetos.">
+
+    <!-- Marca que o JavaScript está ativo antes da primeira pintura da página.
+         Sem isso, no celular o menu aparece aberto por um instante e depois
+         some, deslocando todo o conteúdo. -->
+    <script>document.documentElement.classList.add('js');</script>
+
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <!-- Pré-carrega a fonte: ela chega antes da primeira pintura e o texto
+         não muda de tamanho (medido com o Lighthouse: CLS 0 no celular) -->
+    <link rel="preload" href="assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
+    <!-- Atalho para quem navega pelo teclado: aparece só ao receber foco -->
+    <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
 
     <!-- ========== CABEÇALHO ========== -->
     <header class="header">
@@ -41,7 +75,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="conteudo">
 
         <!-- ========== INÍCIO ========== -->
         <section id="inicio" class="inicio">
@@ -63,24 +97,24 @@
                     <a href="#contato" class="botao botao-secundario">Entrar em contato</a>
                 </div>
 
-                <ul class="inicio-contatos" aria-label="Meus contatos">
+                <ul class="inicio-contatos">
                     <li>
                         <a href="https://github.com/darlanrosendo" class="inicio-contato" target="_blank" rel="noopener noreferrer">
                             <svg class="inicio-contato-icone" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
                                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                             </svg>
                             GitHub
+                            <span class="visualmente-oculto">(abre em nova aba)</span>
                         </a>
                     </li>
-                    <!-- LinkedIn: [a definir] - oculto até o endereço ser definido.
-                         Para exibir: remover o atributo "hidden" e trocar o <span> por um link. -->
-                    <li hidden>
-                        <span class="inicio-contato inicio-contato-pendente">
+                    <li>
+                        <a href="https://www.linkedin.com/in/darlan-rosendo/" class="inicio-contato" target="_blank" rel="noopener noreferrer">
                             <svg class="inicio-contato-icone" viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" aria-hidden="true" focusable="false">
                                 <path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm2 8v8h2.5v-8H6zm1.25-4a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9zM10.5 10v8H13v-4.3c0-1.1.7-1.8 1.6-1.8.9 0 1.4.6 1.4 1.8V18h2.5v-4.9c0-2.1-1.2-3.3-2.9-3.3-1.1 0-2 .5-2.6 1.3V10h-2.5z"/>
                             </svg>
-                            LinkedIn <small>(em breve)</small>
-                        </span>
+                            LinkedIn
+                            <span class="visualmente-oculto">(abre em nova aba)</span>
+                        </a>
                     </li>
                     <li>
                         <a href="mailto:darlanbarbosa8@gmail.com" class="inicio-contato">
@@ -130,101 +164,184 @@
         </section>
 
         <!-- ========== TECNOLOGIAS ========== -->
-        <section id="tecnologias" class="tecnologias">
-            <h2>Tecnologias</h2>
+        <section id="tecnologias" class="secao tecnologias" aria-labelledby="tecnologias-titulo">
+            <h2 id="tecnologias-titulo" class="secao-titulo">Tecnologias que estou aprendendo</h2>
 
+            <!-- Os ícones ficam em assets/images/icones/. O nome ao lado já identifica
+                 cada tecnologia, por isso as imagens têm alt vazio. -->
             <ul class="tecnologias-lista">
-                <li class="tecnologia-card">C#</li>
-                <li class="tecnologia-card">.NET</li>
-                <li class="tecnologia-card">HTML</li>
-                <li class="tecnologia-card">CSS</li>
-                <li class="tecnologia-card">JavaScript</li>
-                <li class="tecnologia-card">Git</li>
-                <li class="tecnologia-card">GitHub</li>
-                <li class="tecnologia-card">SQL Server</li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/csharp.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">C#</span>
+                </li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/dotnet.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">.NET</span>
+                </li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/html.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">HTML</span>
+                </li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/css.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">CSS</span>
+                </li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/javascript.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">JavaScript</span>
+                </li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/git.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">Git</span>
+                </li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/github.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">GitHub</span>
+                </li>
+                <li class="tecnologia-card">
+                    <img class="tecnologia-icone" src="assets/images/icones/sql-server.svg" alt="" width="40" height="40">
+                    <span class="tecnologia-nome">SQL Server</span>
+                </li>
             </ul>
         </section>
 
         <!-- ========== PROJETOS ========== -->
-        <section id="projetos" class="projetos">
-            <h2>Projetos</h2>
+        <section id="projetos" class="secao projetos" aria-labelledby="projetos-titulo">
+            <h2 id="projetos-titulo" class="secao-titulo">Projetos</h2>
 
             <!--
-                Os cards abaixo são espaços reservados (placeholders).
-                Para adicionar um projeto real, substitua em um card:
+                Os cards abaixo são espaços reservados.
+                Para publicar um projeto real, substitua em um card:
                 imagem, nome, descrição, tecnologias e links.
             -->
-            <div class="projetos-lista">
-
-                <article class="projeto-card">
-                    <div class="projeto-imagem">[Imagem do projeto]</div>
-                    <h3 class="projeto-nome">[Nome do projeto]</h3>
-                    <p class="projeto-descricao">[Espaço reservado: breve descrição do projeto.]</p>
-                    <ul class="projeto-tecnologias" aria-label="Tecnologias utilizadas">
-                        <li>[Tecnologia]</li>
-                    </ul>
-                    <ul class="projeto-links">
-                        <li>[Link do GitHub: a definir]</li>
-                        <li>[Link para visualizar: a definir]</li>
-                    </ul>
-                </article>
-
-                <article class="projeto-card">
-                    <div class="projeto-imagem">[Imagem do projeto]</div>
-                    <h3 class="projeto-nome">[Nome do projeto]</h3>
-                    <p class="projeto-descricao">[Espaço reservado: breve descrição do projeto.]</p>
-                    <ul class="projeto-tecnologias" aria-label="Tecnologias utilizadas">
-                        <li>[Tecnologia]</li>
-                    </ul>
-                    <ul class="projeto-links">
-                        <li>[Link do GitHub: a definir]</li>
-                        <li>[Link para visualizar: a definir]</li>
-                    </ul>
-                </article>
-
-                <article class="projeto-card">
-                    <div class="projeto-imagem">[Imagem do projeto]</div>
-                    <h3 class="projeto-nome">[Nome do projeto]</h3>
-                    <p class="projeto-descricao">[Espaço reservado: breve descrição do projeto.]</p>
-                    <ul class="projeto-tecnologias" aria-label="Tecnologias utilizadas">
-                        <li>[Tecnologia]</li>
-                    </ul>
-                    <ul class="projeto-links">
-                        <li>[Link do GitHub: a definir]</li>
-                        <li>[Link para visualizar: a definir]</li>
-                    </ul>
-                </article>
-
-            </div>
+            <ul class="projetos-lista">
+                <li>
+                    <article class="projeto-card">
+                        <div class="projeto-imagem" aria-hidden="true">
+                            <span class="projeto-imagem-marca">&lt;/&gt;</span>
+                        </div>
+                        <div class="projeto-info">
+                            <h3 class="projeto-nome">Projeto 01</h3>
+                            <p class="projeto-status">Em breve</p>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="projeto-card">
+                        <div class="projeto-imagem" aria-hidden="true">
+                            <span class="projeto-imagem-marca">&lt;/&gt;</span>
+                        </div>
+                        <div class="projeto-info">
+                            <h3 class="projeto-nome">Projeto 02</h3>
+                            <p class="projeto-status">Em breve</p>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="projeto-card">
+                        <div class="projeto-imagem" aria-hidden="true">
+                            <span class="projeto-imagem-marca">&lt;/&gt;</span>
+                        </div>
+                        <div class="projeto-info">
+                            <h3 class="projeto-nome">Projeto 03</h3>
+                            <p class="projeto-status">Em breve</p>
+                        </div>
+                    </article>
+                </li>
+            </ul>
         </section>
 
         <!-- ========== SOBRE MIM ========== -->
-        <section id="sobre" class="sobre">
-            <h2>Sobre mim</h2>
-            <p>
-                Sou Darlan Rosendo, desenvolvedor em formação com interesse em C# e
-                desenvolvimento web. Gosto de aprender novas tecnologias, resolver
-                problemas e transformar ideias em projetos práticos.
-            </p>
+        <section id="sobre" class="secao sobre" aria-labelledby="sobre-titulo">
+            <h2 id="sobre-titulo" class="secao-titulo">Sobre mim</h2>
+
+            <div class="sobre-conteudo">
+                <!-- Avatar genérico (ícone), apenas decorativo -->
+                <div class="sobre-avatar" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor" focusable="false">
+                        <circle cx="12" cy="8" r="4.5"/>
+                        <path d="M3.5 21c0-4.4 3.8-7.5 8.5-7.5s8.5 3.1 8.5 7.5z"/>
+                    </svg>
+                </div>
+
+                <div class="sobre-texto">
+                    <p>
+                        Sou <strong>Darlan Rosendo</strong>, desenvolvedor em formação.
+                        Estou estudando <strong>C# e .NET</strong> e tenho interesse em
+                        desenvolvimento de software e desenvolvimento web.
+                    </p>
+                    <p>
+                        Evoluo por meio de estudos, prática e projetos. Gosto de resolver
+                        problemas e de transformar ideias em soluções organizadas e funcionais.
+                    </p>
+
+                    <!-- Título só para leitores de tela: identifica a lista de selos abaixo -->
+                    <h3 class="visualmente-oculto">Áreas de interesse</h3>
+                    <ul class="sobre-destaques">
+                        <li>C# e .NET</li>
+                        <li>Desenvolvimento de software</li>
+                        <li>Desenvolvimento web</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <!-- ========== CONTATO ========== -->
-        <section id="contato" class="contato">
-            <h2>Contato</h2>
+        <section id="contato" class="secao contato" aria-labelledby="contato-titulo">
+            <h2 id="contato-titulo" class="secao-titulo">Contato</h2>
 
-            <!-- Espaços reservados: os links reais serão adicionados depois -->
+            <p class="contato-texto">
+                Quer conversar sobre tecnologia, oportunidades ou projetos?
+                Fique à vontade para entrar em contato.
+            </p>
+
             <ul class="contato-lista">
-                <li class="contato-item">
-                    <span class="contato-nome">GitHub</span>
-                    <span class="contato-valor">[a definir]</span>
+                <li>
+                    <a href="https://github.com/darlanrosendo" class="contato-card" target="_blank" rel="noopener noreferrer">
+                        <svg class="contato-icone" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                        <span class="contato-info">
+                            <span class="contato-nome">GitHub</span>
+                            <span class="contato-valor">github.com<wbr>/darlanrosendo</span>
+                        </span>
+                        <span class="visualmente-oculto">(abre em nova aba)</span>
+                    </a>
                 </li>
-                <li class="contato-item">
-                    <span class="contato-nome">LinkedIn</span>
-                    <span class="contato-valor">[a definir]</span>
+                <li>
+                    <a href="https://www.linkedin.com/in/darlan-rosendo/" class="contato-card" target="_blank" rel="noopener noreferrer">
+                        <svg class="contato-icone" viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" aria-hidden="true" focusable="false">
+                            <path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm2 8v8h2.5v-8H6zm1.25-4a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9zM10.5 10v8H13v-4.3c0-1.1.7-1.8 1.6-1.8.9 0 1.4.6 1.4 1.8V18h2.5v-4.9c0-2.1-1.2-3.3-2.9-3.3-1.1 0-2 .5-2.6 1.3V10h-2.5z"/>
+                        </svg>
+                        <span class="contato-info">
+                            <span class="contato-nome">LinkedIn</span>
+                            <span class="contato-valor">linkedin.com<wbr>/in/darlan-rosendo</span>
+                        </span>
+                        <span class="visualmente-oculto">(abre em nova aba)</span>
+                    </a>
                 </li>
-                <li class="contato-item">
-                    <span class="contato-nome">E-mail</span>
-                    <span class="contato-valor">[a definir]</span>
+                <li class="contato-item-email">
+                    <!-- Card de e-mail: não é um link, para não colocar botões dentro de um <a> -->
+                    <div class="contato-card contato-card-email">
+                        <div class="contato-card-topo">
+                            <svg class="contato-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                <path d="m3 7 9 6 9-6"/>
+                            </svg>
+                            <span class="contato-info">
+                                <span class="contato-nome">E-mail</span>
+                                <span class="contato-valor contato-valor-selecionavel">darlanbarbosa8<wbr>@gmail.com</span>
+                            </span>
+                        </div>
+
+                        <div class="contato-acoes">
+                            <a href="mailto:darlanbarbosa8@gmail.com" class="botao botao-primario contato-acao">Enviar e-mail</a>
+                            <!-- O botão só aparece com JavaScript ativo (a cópia é feita pelo main.js) -->
+                            <button type="button" class="botao botao-secundario contato-acao botao-copiar" data-copiar="darlanbarbosa8@gmail.com" data-feedback="copiar-feedback">Copiar e-mail</button>
+                        </div>
+
+                        <p id="copiar-feedback" class="contato-feedback" aria-live="polite"></p>
+                    </div>
                 </li>
             </ul>
         </section>
